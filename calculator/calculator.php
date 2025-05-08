@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="calculator">
-        <h2>PHP Calculator</h2>
+        <h2>Calculator</h2>
         <form method="post">
             <label for="num1">First Number:</label>
             <input type="number" id="num1" name="num1" required step="any">
