@@ -15,11 +15,12 @@
             <input type="number" id="num2" name="num2" required step="any">
             
             <div class="buttons">
-                <button type="submit" name="operation" value="add">Addition (Sum)</button>
-                <button type="submit" name="operation" value="sub">Subtraction (Sub)</button>
-                <button type="submit" name="operation" value="mul">Multiplication (Mul)</button>
-                <button type="submit" name="operation" value="div">Division (Div)</button>
+                <button type="submit" name="operation" value="add">Addition ( + )</button>
+                <button type="submit" name="operation" value="sub">Subtraction ( - )</button>
+                <button type="submit" name="operation" value="mul">Multiplication ( × )</button>
+                <button type="submit" name="operation" value="div">Division ( ÷ )</button>
             </div>
+            
         </form>
         
         <?php
