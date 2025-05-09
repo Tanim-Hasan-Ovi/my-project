@@ -71,7 +71,7 @@ section {
 
 /* Navigation Bar */
 .navbar {
-    background-color: white;
+    background: rgb(255, 255, 255, 0.7);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -83,7 +83,7 @@ section {
 /* Navbar scroll effect */
 .navbar.scrolled {
     padding: 5px 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    background: rgb(255, 255, 255, 0.7);
     backdrop-filter: blur(5px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
@@ -275,17 +275,18 @@ section {
     align-items: center;
     background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(46, 204, 113, 0.8)), 
                 url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80') no-repeat center center/cover;
-    color: white;
+    color:black;
     text-align: center;
 }
 
 .home-content h1 {
     font-size: 3.5rem;
     margin-bottom: 20px;
+    color: black;
 }
 
 .home-content h1 span {
-    color: var(--light-color);
+    color: black;
 }
 
 .home-content h2 {
@@ -302,8 +303,9 @@ section {
 
 .home-content .btn {
     background-color: #4681bd;
-
+    color: black;
     border-radius: 20px;
+    font-weight: 5px ;
 }
 
 /* About Section */
@@ -386,30 +388,40 @@ section {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
     padding: 25px;
+    padding-bottom: 80px; /* Space for absolute button */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
 }
 
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
+/* Explicit Ordering */
 .project-card h3 {
+    order: 1;
     color: var(--secondary-color);
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
     font-size: 1.3rem;
+    line-height: 1.4;
+    min-height: calc(2 * 1.3rem * 1.4); 
+    overflow: hidden; 
 }
 
 .project-card p {
+    order: 2; 
     color: var(--text-light);
-    margin-bottom: 20px;
+    margin: 0;
+    overflow: hidden; 
 }
 
 .tech-used {
+    order: 3; 
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-top: auto; 
+    overflow: hidden; 
 }
 
 .tech-used span {
@@ -419,19 +431,37 @@ section {
     border-radius: 5px;
     font-size: 0.8rem;
     font-weight: 600;
+    overflow: hidden; 
 }
 
 .project-card .btn {
-    display: block;
+    order: 4; 
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
     text-align: center;
-    margin-top: 20px;
+    margin: 0;
     border-radius: 40px;
     background: transparent;
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
+    padding: 8px 20px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
 }
 
+/* Hover States */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
 
+.project-card .btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
 
 /* Contact Section */
 .contact-container {
